@@ -32,3 +32,37 @@ const inputFrase = document.querySelector('#frase')
 const inputNumRepeticao = document.querySelector('#num-repeticao')
 const btnFrase = document.querySelector('#btn-frase')
 const divFrase = document.querySelector('#div-frase')
+
+btnFrase.addEventListener('click', (evt) => {
+  let numRepeti = Number(inputNumRepeticao.value)
+  let frase = inputFrase.value
+
+  for(i = 0; i < numRepeti; i++){
+    divFrase.innerHTML += `${i + 1} - ${frase} <br>`
+  }
+})
+
+//COLEÇÃO DE DADOS - ARRAY
+const presentes = ['Bicicleta', 'Celular','Camisa do Timão', 'Doleira', 'Tênis Adidas']
+
+const divArray = document.querySelector('#div-array')
+
+//divArray.innerHTML = presente [6]
+
+for(i = 0;i < 5;i++ ){
+  divArray.innerHTML += `${presentes[i]} <br>`
+}
+
+//FOR IN
+const divForIn = document.querySelector('#div-forin')
+
+for(let posicao in presentes){
+  divForIn.innerHTML += `${presentes[posicao]} <br>`
+
+}
+//For OF
+const divForOf = document.querySelector('#div-forof')
+
+for (let elemento of presentes){
+  divForOf.innerHTML += `${elemento} <br>`
+}
