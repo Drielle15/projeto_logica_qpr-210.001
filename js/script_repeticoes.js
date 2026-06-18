@@ -90,3 +90,31 @@ const divlistaObjFor = document.querySelector('#div-listaobj-for')
     divlistaObjFor.innerHTML += `${pessoas[i].nome}, ${pessoas[i].idade} R$ ${pessoas[i].renda.toFixed(2).replace(',',',')} <br>`
 
   }
+
+  //Lista Objeto Literal - For/IN
+  const divlistaObjForIn = document.querySelector('#div-listaobj-forin')
+
+  for(let indice in pessoas){
+    divlistaObjForIn.innerHTML += `${indice} - ${pessoas[indice.name]}, ${pessoas[indice].idade}, R$ ${pessoas[indice].renda.toFixed(2).replace('.',',')} <br>`
+  }
+
+  //Lista Objeto Literal Pelo - For/OF
+
+  const divlistaForOf = document.querySelector ('#div-listaobj-forof')
+
+  let contForOf = 0
+   
+  for(let elem of pessoas){
+    contForOf++
+    divlistaForOf.innerHTML += `${contForOf} -${elem.nome}, ${elem.idade}, R$ ${elem.renda.toFixed(2).replace('.',',')} <br>`
+
+  }
+
+   // Lista Objeto Literal PELO FOREACH
+   const divlistaForeach = document.querySelector('#div-lista-foreach')
+
+   pessoas.forEach((elem, i) =>{
+    divlistaForeach.innerHTML += `${i + 1} -${elem.nome}, ${elem.idade}, R$ ${elem.renda.toFixed(2).replace('.',',')} <br>`
+   })
+
+
