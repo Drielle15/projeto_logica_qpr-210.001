@@ -77,11 +77,37 @@ presentes.forEach((elemento, posicao) => {
 //COLEÇÃO DE OBJETOS LITERAIS - ARRAY
 const pessoas = [
   {nome: 'Maria Flor', idade: 25, renda:8500},
-  {nome: 'Joerdson Souza', idade: 75, renda:5000},
+  {nome: 'Joerdison Souza', idade: 75, renda:5000},
   {nome: 'Taoca', idade: 28, renda:500},
   {nome: 'Chicó', idade: 36, renda:100},
   {nome: 'João Grilo', idade: 32, renda:80}
 ]
+
+
+//MANIPULANDO ARRAY
+//ADICIONAR ELEMENTOS NO ARRAY
+pessoas.push({nome: 'Magnólia', idade: 32, renda: 3500})
+pessoas.unshift({nome: 'Joerdison', idade: 36, renda: 100000})
+
+//SPLICE ADICIONA EM UMA POSIÇÃO SEM EXCLUIR UM ELEMENTO
+pessoas.splice(3,0,{nome: 'Extraterrestre', idade : 250, renda: 0.50})
+
+
+//SPLICE ADICIONA EM UMA POSIÇÃO E NESSE EXEMPLO EXCLUIR MAIS DOIS ELEMENTOS A PARTIR DA POSIÇÃO(INDICE) INFORMADO
+pessoas.splice(3,2,{nome: 'Extraterrestre', idade : 250, renda: 0.50})
+
+//SPLICE EXCLUI UMA POSIÇÃO E NESSE EXEMPLO EXCLUIR APENAS O ELEMENTO DA POSIÇÃO(INDICE) INFORMANDA
+//pessoas.splice(1,0)
+
+//SPLICE EXCLUI DOIS ELEMENTOS A PARTIR DA POSIÇÃO(INDICE) INFORMADA
+//pessoas.splice(2,2)
+
+//EXCLUIR O ULTIMO ELEMENTO DO ARRAY
+pessoas.pop()
+
+
+//EXIBIR A QUANTIDADE DE ELEMENTOS EM UM ARRAY
+console.log('TOTAL DE ELEMENTOS NO ARRAY pessoas ===>', pessoas.length)
 
 //LISTA OBJETO LITERAL PELO FOR
 const divlistaObjFor = document.querySelector('#div-listaobj-for')
@@ -95,7 +121,7 @@ const divlistaObjFor = document.querySelector('#div-listaobj-for')
   const divlistaObjForIn = document.querySelector('#div-listaobj-forin')
 
   for(let indice in pessoas){
-    divlistaObjForIn.innerHTML += `${indice} - ${pessoas[indice.name]}, ${pessoas[indice].idade}, R$ ${pessoas[indice].renda.toFixed(2).replace('.',',')} <br>`
+    divlistaObjForIn.innerHTML += `${indice} - ${pessoas[indice].nome}, ${pessoas[indice].idade}, R$ ${pessoas[indice].renda.toFixed(2).replace('.',',')} <br>`
   }
 
   //Lista Objeto Literal Pelo - For/OF
